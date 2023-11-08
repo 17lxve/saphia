@@ -1,0 +1,22 @@
+:root{
+  --lightPrimaryBg : lightsalmon;
+  --lightSecondaryBg : white;
+  --bgColorBlur : pink;
+  --textPrimary: black;
+  --idleLink: black;
+  --activeLink: red;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+  /* background-image:url('images/ap.webp'); */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+}
+svg {
+  display: block;
+}
