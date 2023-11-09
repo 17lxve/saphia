@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import './custom.css'
 import TabComponent from '../../components/tab'
 import LoginComponent from '../../components/login';
@@ -20,7 +20,7 @@ function LoginPage({title}: Props) {
     <>
         <main className="container">
             <TabComponent 
-                title="Mes Onglets"
+                title={ "Mes Onglets + " + title}
                 trigger={tabsElements.triggers}
                 content={tabsElements.content}
             />
@@ -37,6 +37,7 @@ function AccessComponent(){
                 Pour faire une demande d'accès au chatbot remplissez le formulaire suivant en y renseignant les informations necessaire
                 </div>
             </div>
+            
         </>
     )
 }
