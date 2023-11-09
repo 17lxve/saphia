@@ -1,10 +1,11 @@
 :root{
-  --lightPrimaryBg : lightsalmon;
+  --lightPrimaryBg : #FBF4E9;
   --lightSecondaryBg : white;
   --bgColorBlur : pink;
   --textPrimary: black;
-  --idleLink: black;
-  --activeLink: red;
+  --idleLink: #2B3F6C;
+  --activeLinkColor: #E8770F;
+  --activeLinkBg: #FBF4E9
 }
 *{
   box-sizing: border-box;
@@ -13,10 +14,13 @@
 }
 body{
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-  /* background-image:url('images/ap.webp'); */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
+  background-image:url('images/ap.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 svg {
-  display: block;
+  color: var(--idleLink);
+}
+.active svg{
+  color: var(--activeLinkColor);
 }

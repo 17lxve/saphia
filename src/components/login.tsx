@@ -1,4 +1,3 @@
-import React from 'react'
 import * as Form from '@radix-ui/react-form';
 import * as Checkbox from '@radix-ui/react-checkbox';
 import { CheckIcon, EnterIcon } from '@radix-ui/react-icons';

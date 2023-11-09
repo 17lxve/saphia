@@ -1,11 +1,9 @@
-import React from 'react'
+// import React from 'react'
 import './custom.css'
 import TabComponent from '../../components/tab'
 import LoginComponent from '../../components/login';
 
-type Props = {title:string}
-
-function LoginPage({title} : Props) {
+function LoginPage() {
     const tabsElements = {
         triggers:[
             { key: '1', title: `Se connecter à SAPHIA` },
