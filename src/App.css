@@ -1,4 +1,3 @@
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -18,9 +17,9 @@
 
 /*Sidebar*/
 
-.sidebar{
+.sidebar {
   position: fixed;
-  left:0;
+  left: 0;
   background-color: var(--lightSecondaryBg);
   height: 100%;
   width: 30%;
@@ -31,40 +30,68 @@
   flex-wrap: wrap;
 }
 
-.sidebar2{
-padding: 2.9375rem 1.5625rem 1.8125rem 1.5625rem;
-flex-direction: column;
-align-items: flex-start;
-gap: 3.4375rem;
-flex-shrink: 0;
-align-self: stretch;
+.sidebar2 {
+  padding: 2.9375rem 1.5625rem 1.8125rem 1.5625rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3.4375rem;
+  flex-shrink: 0;
+  align-self: stretch;
 }
 
-.sidebar h1{
+.sidebar h1 {
   font-size: large;
 }
 
-.sidebar-element{
+.sidebar-container {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-element {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-}
-.links{
+  width: 100%;
+  text-align: left;
+
   color: var(--idleLink);
   background-color: var(--lightSecondaryBg);
   font-size: 0.8rem;
-  margin: 10% 1%;
+  /* margin: 10% 1%; */
   border-radius: 10px;
 }
+.sidebar-element.link {
+  justify-content: left;
+}
 
-.links.active{
+.links {
+  color: inherit;
+  background-color: inherit;
+  font-size: inherit;
+  margin: 10% 1%;
+  border-radius: inherit;
+}
+
+.down.link {
+  margin: 90% 1% auto 1%;
+}
+
+.links.active {
   color: var(--activeLinkColor);
   background-color: var(--activeLinkBg);
 }
-
+.sidebar-element.link:hover,
+.links:hover {
+  color: var(--activeLinkColor);
+  background-color: var(--activeLinkBg);
+  cursor: pointer;
+}
 /**/
-.main-box{
+.main-box {
   position: fixed;
   width: 70%;
   right: 0;

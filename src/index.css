@@ -1,26 +1,28 @@
-:root{
-  --lightPrimaryBg : #FBF4E9;
-  --lightSecondaryBg : white;
-  --bgColorBlur : pink;
+:root {
+  --lightPrimaryBg: #fbf4e9;
+  --lightSecondaryBg: white;
+  --bgColorBlur: pink;
   --textPrimary: black;
-  --idleLink: #2B3F6C;
-  --activeLinkColor: #E8770F;
-  --activeLinkBg: #FBF4E9
+  --idleLink: #2b3f6c;
+  --activeLinkColor: #e8770f;
+  --activeLinkBg: #fbf4e9;
 }
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-body{
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-  background-image:url('images/ap.webp');
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-image: url("images/ap.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }
 svg {
-  color: var(--idleLink);
+  /* color: var(--idleLink); */
+  color: inherit;
 }
-.active svg{
+.active svg {
   color: var(--activeLinkColor);
 }
