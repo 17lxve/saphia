@@ -1,205 +1,200 @@
 .TabsRoot {
-    display: flex;
-    flex-direction: column;
-    width: 60vh;
-    box-shadow: 0 2px 10px var(--bgColor);
-    position: relative;
-    background-color: var(--bgColorBlur);
-    backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  width: 60vh;
+  box-shadow: 0 2px 10px var(--bgColor);
+  position: relative;
+  background-color: var(--bgColorBlur);
+  backdrop-filter: blur(5px);
 }
 
 .TabsList {
-    flex-shrink: 0;
-    display: flex;
-    border-bottom: 1px solid var(--idleLink);
+  flex-shrink: 0;
+  display: flex;
+  border-bottom: 1px solid var(--idleLink);
 }
 
 .TabsTrigger {
-    all: unset;
-    font-family: inherit;
-    padding: 0 20px;
-    height: 45px;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2em;
-    font-weight: 600;
-    color: white;
-    user-select: none;
+  all: unset;
+  font-family: inherit;
+  padding: 0 20px;
+  height: 45px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: white;
+  user-select: none;
 }
 
 .TabsTrigger:first-child {
-    border-top-left-radius: 6px;
+  border-top-left-radius: 6px;
 }
 
 .TabsTrigger:last-child {
-    border-top-right-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 .TabsTrigger:hover {
-    color: var(--activeLink);
+  color: var(--activeLink);
 }
 
-.TabsTrigger[data-state='active'] {
-    color: var(--activeLink);
-    border-bottom: 2px solid var(--activeLink);
+.TabsTrigger[data-state="active"] {
+  color: var(--activeLink);
+  border-bottom: 2px solid var(--activeLink);
 }
 
 .TabsTrigger:focus {
-    position: relative;
-    border-bottom: 2px solid var(--activeLink);
+  position: relative;
+  border-bottom: 2px solid var(--activeLink);
 }
 
 .TabsContent {
-    flex-grow: 1;
-    padding: 20px;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-    outline: none;
+  flex-grow: 1;
+  padding: 20px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  outline: none;
 }
 
 .TabsContent .tabContainer {
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .info {
-    color: white
+  color: white;
 }
-
-
 
 /* reset */
 input,
 textarea,
 button {
-    all: unset;
-    box-sizing: border-box;
+  all: unset;
+  box-sizing: border-box;
 }
 
 .FormRoot {
-    width: 100%;
+  width: 100%;
 }
 
 .FormField {
-    display: grid;
-    margin-bottom: 10px;
-    font-weight: 600;
+  display: grid;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .FormLabel {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 35px;
-    color: white;
-    user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 35px;
+  color: white;
+  user-select: none;
 }
 
 .FormMessage {
-    font-size: 13px;
-    color: var(--textPrimary);
-    font-weight: 800;
-    font-style: italic;
-    opacity: 0.8;
-    padding: 10px;
+  font-size: 13px;
+  color: var(--textPrimary);
+  font-weight: 800;
+  font-style: italic;
+  opacity: 0.8;
+  padding: 10px;
 }
 
 .Input,
 .Textarea {
-    width: 100%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    font-size: 15px;
-    color: white;
-    background-color: var(--bgColor);
-    box-shadow: 0 0 0 1px var(--activeLink);
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 15px;
+  color: white;
+  background-color: var(--bgColor);
+  box-shadow: 0 0 0 1px var(--activeLink);
 }
-
-
 
 .Input::selection {
-    background-color: var(--bgColor);
-    color: white;
+  background-color: var(--bgColor);
+  color: white;
 }
-.stayO{
-    color: var(--activeLink) !important;
-    text-shadow: 1px solid var(--textPrimary);
+.stayO {
+  color: var(--activeLink) !important;
+  text-shadow: 1px solid var(--textPrimary);
 }
 .Input {
-    padding: 0 10px;
-    height: 35px;
-    line-height: 1;
+  padding: 0 10px;
+  height: 35px;
+  line-height: 1;
 }
 
 .Textarea {
-    resize: none;
-    padding: 10px;
+  resize: none;
+  padding: 10px;
 }
 
 .Button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-around;
-    font-weight: 900;
-    border-radius: 4px;
-    padding: 0 15px;
-    font-size: 15px;
-    line-height: 1;
-    height: 35px;
-    width: 100%;
-    background-color: #46A758;
-    color: var(--textPrimary);
-    box-shadow: 0 2px 10px var(--bgColorBlur);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: 900;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 1;
+  height: 35px;
+  width: 100%;
+  background-color: #46a758;
+  color: var(--textPrimary);
+  box-shadow: 0 2px 10px var(--bgColorBlur);
 }
 
 .Button:hover {
-    background-color: var(--textPrimary);
-    color: #46A758;
+  background-color: var(--textPrimary);
+  color: #46a758;
 }
 
 .Button:focus {
-    box-shadow: 0 0 0 2px black;
+  box-shadow: 0 0 0 2px black;
 }
 
 .CheckboxRoot {
-    background-color: var(--bgColorBlur);
-    width: 25px;
-    height: 25px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--bgColor);
+  background-color: var(--bgColorBlur);
+  width: 25px;
+  height: 25px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--bgColor);
 }
 
 .CheckboxRoot:hover {
-    background-color: var(--bgColor);
+  background-color: var(--bgColor);
 }
 
 .CheckboxRoot:focus {
-    box-shadow: 0 0 0 2px var(--bgColor);
-    color: var(--textPrimary)
+  box-shadow: 0 0 0 2px var(--bgColor);
+  color: var(--textPrimary);
 }
 
 .CheckboxIndicator {
-    color: var(--activeLink);
-    font-weight: 800;
+  color: var(--activeLink);
+  font-weight: 800;
 }
 
 .Label {
-    color: white;
-    padding-left: 15px;
-    font-size: 15px;
-    line-height: 1;
-    user-select: none;
+  color: white;
+  padding-left: 15px;
+  font-size: 15px;
+  line-height: 1;
+  user-select: none;
 }

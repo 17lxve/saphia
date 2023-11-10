@@ -1,67 +1,102 @@
-.chatbar{
-    background-color: var(--lightSecondaryBg);
-    position: absolute;
-    bottom: 10%;
-    width: 63%;
-    height: 10%;
-    margin: auto 20%;
-    border-radius: 50px;
-    border-style: solid;
-
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--activeLinkColor);
-    font-size: xx-large;
+.toggle-btn {
+  padding: 4%;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  text-align: center;
+  border-radius: 20px;
+  width: 50%;
 }
-.chatbar input{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border: none;
-    border-radius: 50px;
-    padding: 5%;
-    flex-wrap: wrap;
+.active-btn {
+  background-color: var(--activeLinkColor);
+  color: white;
 }
 
-.chatbar input:focus{
-    outline:none;
+.middlebar {
+  background-color: var(--lightPrimaryBg);
+  color: brown;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-top: 3%;
+}
+.button-box {
+  background-color: var(--lightSecondaryBg);
+  width: 50%;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 1s linear;
 }
 
+.chatbar {
+  background-color: var(--lightSecondaryBg);
+  position: absolute;
+  bottom: 10%;
+  width: 63%;
+  height: 10%;
+  margin: auto 20%;
+  border-radius: 50px;
+  border-style: solid;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--activeLinkColor);
+  font-size: xx-large;
+}
+.chatbar input {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: none;
+  border-radius: 50px;
+  padding: 5%;
+  flex-wrap: wrap;
+}
+
+.chatbar input:focus {
+  outline: none;
+}
 
 /*Glowing bar*/
 
 .chatbar::before,
-.chatbar::after{
-    content:"";
-    position: absolute;
-    inset: -0.2rem;
-    z-index: -1;
-    border-radius: 50px;
-    background: conic-gradient(
-        from var(--gradient-angle),
-        var(--activeLinkColor),
-        var(--lightSecondaryBg)
-    );
-    animation: rotation 5s linear infinite
+.chatbar::after {
+  content: "";
+  position: absolute;
+  inset: -0.3rem;
+  z-index: -1;
+  border-radius: 50px;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--activeLinkColor),
+    var(--lightSecondaryBg)
+  );
+  animation: rotation 5s linear infinite;
 }
 
-.card::after{
-    filter: blur(3.5rem);
+.card::after {
+  filter: blur(3.5rem);
 }
 
 /* Animations */
 
 @keyframes rotation {
-    0% { --gradient-angle: 0deg }
-    100% { --gradient-angle: 360deg }
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
 }
 
 /* Custom property*/
 
 @property --gradient-angle {
-    syntax: "<angle>";
-    initial-value:0deg;
-    inherits: false;
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }

@@ -1,10 +1,9 @@
-function ChatBar(){
-    return (
+function ChatBar() {
+  return (
     <main className="chatbar">
-        <input type="text" placeholder="Saisir une requête"/>
+      <input type="text" placeholder="Saisir une requête" />
     </main>
-    )
+  );
 }
 
-export default ChatBar
-
+export default ChatBar;
