@@ -49,7 +49,7 @@
   align-items: center;
   justify-content: center;
   color: var(--activeLinkColor);
-  font-size: xx-large;
+  font-size: large;
 }
 .chatbar input {
   width: 100%;

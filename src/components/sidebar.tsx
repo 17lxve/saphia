@@ -1,8 +1,9 @@
 import { ReactNode } from "react";
-
+import { useNavigate } from "react-router-dom";
 type Props = { tabs: { name: string; icon: ReactNode; id: number }[] };
 
 function Sidebar({ tabs }: Props) {
+  const go = useNavigate()
   return (
     <>
       <main className="sidebar">
@@ -20,6 +21,10 @@ function Sidebar({ tabs }: Props) {
                     : "sidebar-element link"
                 }
                 key={tab.id}
+                onClick={
+                  tab.id == 4
+                ? () => go('/login', {replace:true})
+                : () => console.log("This is the " + tab.name + " tab")}
               >
                 {tab.icon}
                 <h2 className="links">{tab.name}</h2>
