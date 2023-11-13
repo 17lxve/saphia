@@ -7,7 +7,7 @@ function Sidebar({ tabs }: Props) {
     <>
       <main className="sidebar">
         <div className="sidebar-container">
-          <h1 className="sidebar-element">
+          <h1 className="sidebar-element logo">
             {" "}
             Chatbot <img src="/images/gs2e1.png" alt="GS2E" />{" "}
           </h1>

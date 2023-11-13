@@ -22,6 +22,7 @@ body {
 svg {
   /* color: var(--idleLink); */
   color: inherit;
+  margin: auto 4% auto 7%;
 }
 .active svg {
   color: var(--activeLinkColor);
