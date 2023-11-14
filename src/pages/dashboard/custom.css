@@ -22,7 +22,7 @@
   justify-content: center;
   width: 100%;
   margin-top: 3%;
-  filter: blur(0.01rem)
+  filter: blur(0.01rem);
 }
 .button-box {
   background-color: var(--lightPrimaryBg);
