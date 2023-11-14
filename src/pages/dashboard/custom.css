@@ -1,0 +1,106 @@
+.toggle-btn {
+  padding: 4%;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  text-align: center;
+  border-radius: 20px;
+  width: 50%;
+}
+.active-btn {
+  background-color: var(--activeLinkColor);
+  color: white;
+}
+
+.middlebar {
+  background-color: var(--lightPrimaryBg);
+  color: brown;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-top: 3%;
+  filter: blur(0.01rem)
+}
+.button-box {
+  background-color: var(--lightPrimaryBg);
+  width: 30%;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 1s linear;
+  /* border: solid black 0.5px; */
+  box-shadow: #c8c8c8 5px 8px 8px;
+  outline: solid var(--lightPrimaryBg) 4px;
+}
+
+.chatbar {
+  background-color: var(--lightSecondaryBg);
+  position: absolute;
+  bottom: 10%;
+  width: 63%;
+  height: 10%;
+  margin: auto 20%;
+  border-radius: 50px;
+  border-style: solid;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--activeLinkColor);
+  font-size: large;
+}
+.chatbar input {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: none;
+  border-radius: 50px;
+  padding: 5%;
+  flex-wrap: wrap;
+}
+
+.chatbar input:focus {
+  outline: none;
+}
+
+/*Glowing bar*/
+
+.chatbar::before,
+.chatbar::after {
+  content: "";
+  position: absolute;
+  inset: -0.3rem;
+  z-index: -1;
+  border-radius: 50px;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--activeLinkColor),
+    var(--lightSecondaryBg)
+  );
+  animation: rotation 5s linear infinite;
+}
+
+.card::after {
+  filter: blur(3.5rem);
+}
+
+/* Animations */
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+/* Custom property*/
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
