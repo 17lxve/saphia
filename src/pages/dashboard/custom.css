@@ -22,13 +22,17 @@
   justify-content: center;
   width: 100%;
   margin-top: 3%;
+  filter: blur(0.01rem)
 }
 .button-box {
-  background-color: var(--lightSecondaryBg);
-  width: 50%;
+  background-color: var(--lightPrimaryBg);
+  width: 30%;
   border-radius: 20px;
   overflow: hidden;
   transition: all 1s linear;
+  /* border: solid black 0.5px; */
+  box-shadow: #c8c8c8 5px 8px 8px;
+  outline: solid var(--lightPrimaryBg) 4px;
 }
 
 .chatbar {
@@ -45,7 +49,7 @@
   align-items: center;
   justify-content: center;
   color: var(--activeLinkColor);
-  font-size: xx-large;
+  font-size: large;
 }
 .chatbar input {
   width: 100%;

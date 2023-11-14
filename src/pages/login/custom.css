@@ -38,17 +38,17 @@
 }
 
 .TabsTrigger:hover {
-  color: var(--activeLink);
+  color: var(--compColor);
 }
 
 .TabsTrigger[data-state="active"] {
-  color: var(--activeLink);
-  border-bottom: 2px solid var(--activeLink);
+  color: var(--compColor);
+  border-bottom: 2px solid var(--compColor);
 }
 
 .TabsTrigger:focus {
   position: relative;
-  border-bottom: 2px solid var(--activeLink);
+  border-bottom: 2px solid var(--compColor);
 }
 
 .TabsContent {
@@ -119,7 +119,7 @@ button {
   font-size: 15px;
   color: white;
   background-color: var(--bgColor);
-  box-shadow: 0 0 0 1px var(--activeLink);
+  box-shadow: 0 0 0 1px var(--compColor);
 }
 
 .Input::selection {
@@ -127,7 +127,7 @@ button {
   color: white;
 }
 .stayO {
-  color: var(--activeLink) !important;
+  color: var(--compColor) !important;
   text-shadow: 1px solid var(--textPrimary);
 }
 .Input {
@@ -187,7 +187,7 @@ button {
 }
 
 .CheckboxIndicator {
-  color: var(--activeLink);
+  color: var(--compColor);
   font-weight: 800;
 }
 
