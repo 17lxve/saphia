@@ -1,13 +1,13 @@
 :root {
-  --bgColor: #1E160F;
+  --bgColor: #1e160f;
   --lightPrimaryBg: #fbf4e9;
   --lightSecondaryBg: white;
   --bgColorBlur: #3a19004e;
-  --textPrimary: #FFE0C2;
+  --textPrimary: #ffe0c2;
   --idleLink: #2b3f6c;
   --activeLinkColor: #e8770f;
   --activeLinkBg: #fbf4e9;
-  --compColor: #F76B15 ;
+  --compColor: #f76b15;
 }
 * {
   box-sizing: border-box;
@@ -17,7 +17,7 @@
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  background-image: url("images/ap.webp");
+  background-image: url("/images/ap.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }
