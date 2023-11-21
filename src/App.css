@@ -49,11 +49,10 @@
   display: flex;
   flex-direction: column;
 }
-.logo{
+.logo {
   margin: 8% auto 10% auto;
-  left: -25%;
+  left: -20%;
   position: relative;
-  
 }
 .sidebar-element {
   display: flex;
@@ -106,4 +105,71 @@
   background-color: var(--lightPrimaryBg);
   height: 100%;
   overflow: hidden;
+  min-height: 0;
+}
+
+/* Chat */
+.chat {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: max-content;
+  max-height: 75%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  justify-items: center;
+  scroll-behavior: smooth;
+  background-color: transparent;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.chat::-webkit-scrollbar {
+  display: none;
+}
+
+.msg-box {
+  border: 2px solid var(--activeLinkColor);
+  width: 80%;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5%;
+  margin: 0.5% 0;
+  background-color: black;
+}
+
+.me {
+  background-color: #fdfdfd;
+  flex-direction: row-reverse;
+}
+
+.bot {
+  background-color: #f1f1f1;
+  flex-direction: row;
+}
+
+.pp {
+  height: 5vw;
+  aspect-ratio: 1/1;
+}
+.me .pp {
+  background-image: url("/favicon.ico");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.bot .pp {
+  background-image: url("/images/gs2e1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.txt-box {
+  display: grid;
+  place-content: center;
+  background-color: transparent;
+  width: 80%;
 }

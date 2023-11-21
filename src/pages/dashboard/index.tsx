@@ -3,34 +3,13 @@ import "./custom.css";
 import ChatBar from "../../components/chatbar";
 import MiddleBar from "../../components/middlebar";
 import Sidebar from "../../components/sidebar";
-import {useState} from 'react'
-import SVGs from "../../assets/svg.d.tsx";
-function DashboardPage() {
-  const [tabs] = useState([
-    {
-      name: "Nouveau Chat",
-      icon: SVGs.Plus,
-      id: 1,
-    },
-    {
-      name: "Historique Chat",
-      icon: SVGs.Timer,
-      id: 2,
-    },
-    {
-      name: "Historique Conversations",
-      icon: SVGs.Union,
-      id: 3,
-    },
-    {
-      name: "Se déconnecter",
-      icon: SVGs.Logout,
-      id: 4,
-    },
-  ]);
+type Props = {
+  tabs: { name: string; icon: JSX.Element; id: number; route: string }[];
+};
+function DashboardPage({ tabs }: Props) {
   return (
     <>
-    <Sidebar tabs={tabs}/>
+      <Sidebar tabs={tabs} />
       <main className="Dashboard">
         <div className="main-box">
           <MiddleBar />
