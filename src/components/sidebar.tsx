@@ -1,6 +1,8 @@
 // import { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
-type Props = { tabs: { name: string; icon: JSX.Element; id: number, route:string }[] };
+type Props = {
+  tabs: { name: string; icon: JSX.Element; id: number; route: string }[];
+};
 function Sidebar({ tabs }: Props) {
   const go = useNavigate();
   return (
@@ -20,9 +22,7 @@ function Sidebar({ tabs }: Props) {
                     : "sidebar-element link"
                 }
                 key={tab.id}
-                onClick={
-                  () => go(tab.route)
-                }
+                onClick={() => go(tab.route)}
               >
                 {tab.icon}
                 <h2 className="links">{tab.name}</h2>
