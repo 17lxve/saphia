@@ -11,25 +11,25 @@ function App() {
       name: "Nouveau Chat",
       icon: SVGs.Plus,
       id: 1,
-      route: '/'
+      route: "/",
     },
     {
       name: "Historique Chat",
       icon: SVGs.Timer,
       id: 2,
-      route: '/chat'
+      route: "/chat",
     },
     {
       name: "Historique Conversations",
       icon: SVGs.Union,
       id: 3,
-      route: '/chat'
+      route: "/chat",
     },
     {
       name: "Se déconnecter",
       icon: SVGs.Logout,
       id: 4,
-      route: '/login'
+      route: "/login",
     },
   ]);
   return (
