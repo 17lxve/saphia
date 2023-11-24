@@ -4,6 +4,7 @@ import * as Checkbox from "@radix-ui/react-checkbox";
 import { CheckIcon, EnterIcon } from "@radix-ui/react-icons";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 type ExpectedResponse = {data:{user:object, token:{accessToken:string, refreshToken:string}}, isPending:boolean, err:object}
 async function submitForm(data: { [k: string]: FormDataEntryValue }):Promise<object> {
   const response = await axios
@@ -21,8 +22,14 @@ async function submitForm(data: { [k: string]: FormDataEntryValue }):Promise<obj
   }
 }
 function LoginComponent() {
+const [tries, setTries] = useState(0)
   const go = useNavigate();
-
+  useEffect(() => {
+    if(localStorage.getItem("token")){
+      go("/profile")
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tries])
   return (
     <>
       <div className="tabContainer">
@@ -35,7 +42,7 @@ function LoginComponent() {
             submitForm(data)
               .then((res) => {
                 console.log(res);
-                go("/profile");
+                setTries(tries+1)
               })
               /**
                * Map errors from your server response into a structure you'd like to work with.
