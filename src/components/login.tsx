@@ -3,20 +3,26 @@ import * as Form from "@radix-ui/react-form";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { CheckIcon, EnterIcon } from "@radix-ui/react-icons";
 import axios from "axios";
-async function submitForm(data: { [k: string]: FormDataEntryValue }) {
+import { useNavigate } from "react-router-dom";
+type ExpectedResponse = {data:{user:object, token:{accessToken:string, refreshToken:string}}, isPending:boolean, err:object}
+async function submitForm(data: { [k: string]: FormDataEntryValue }):Promise<object> {
   const response = await axios
-    .post("http://localhost:3000/login", data)
+    .post("http://localhost:3000/auth", data)
     .catch((err) => console.log(err));
-  console.warn(response);
+  console.warn((response as unknown as ExpectedResponse).data);
   //@ts-ignore
   if (response.data.err) {
     throw Error("Wrong credentials!");
   } else {
+    localStorage.setItem("token", (response as unknown as ExpectedResponse).data.token.accessToken);
+    localStorage.setItem("refreshToken", (response as unknown as ExpectedResponse).data.token.refreshToken);
     //@ts-ignore
-    return response.data;
+    return response.data.user;
   }
 }
 function LoginComponent() {
+  const go = useNavigate();
+
   return (
     <>
       <div className="tabContainer">
@@ -29,6 +35,7 @@ function LoginComponent() {
             submitForm(data)
               .then((res) => {
                 console.log(res);
+                go("/profile");
               })
               /**
                * Map errors from your server response into a structure you'd like to work with.

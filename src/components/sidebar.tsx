@@ -5,6 +5,11 @@ type Props = {
 };
 function Sidebar({ tabs }: Props) {
   const go = useNavigate();
+  const clear = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("refreshToken");
+    go("/login");
+  };
   return (
     <>
       <main className="sidebar">
@@ -22,7 +27,7 @@ function Sidebar({ tabs }: Props) {
                     : "sidebar-element link"
                 }
                 key={tab.id}
-                onClick={() => go(tab.route)}
+                onClick={tab.id == 4 ? () => clear() : () => go(tab.route)}
               >
                 {tab.icon}
                 <h2 className="links">{tab.name}</h2>
