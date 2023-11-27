@@ -26,7 +26,7 @@ const [tries, setTries] = useState(0)
   const go = useNavigate();
   useEffect(() => {
     if(localStorage.getItem("token")){
-      go("/profile")
+      go("/")
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tries])

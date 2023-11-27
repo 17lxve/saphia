@@ -21,7 +21,11 @@ function useFetch(
       .then((res) => {
         // console.log(JSON.stringify(options.body.token))
         if (!res.ok) {
-          throw Error(`Could not fetch the data from resource ${url}`);
+          if (res.status === 403){
+            throw Error('Forbidden')
+          }else{
+            throw Error(`Could not fetch the data from resource ${url}`);
+          }
         }
         return res.json();
       })
