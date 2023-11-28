@@ -1,15 +1,31 @@
 import { useState, useEffect } from "react";
 
-const useFetch = (url: string) => {
+function useFetch(
+  url: string,
+  options: { body: object; headers: HeadersInit; method: string } = {
+    body: {},
+    headers: {},
+    method: "GET",
+  },
+) {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(url)
+    fetch(url, {
+      method: options.method,
+      body: JSON.stringify(options.body),
+      headers: options.headers,
+    })
       .then((res) => {
+        // console.log(JSON.stringify(options.body.token))
         if (!res.ok) {
-          throw Error(`Could not fetch the data from resource ${url}`);
+          if (res.status === 403){
+            throw Error('Forbidden')
+          }else{
+            throw Error(`Could not fetch the data from resource ${url}`);
+          }
         }
         return res.json();
       })
@@ -22,8 +38,9 @@ const useFetch = (url: string) => {
         setIsPending(false);
         setError(err.message);
       });
-  }, [url]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return { data, isPending, error };
-};
+}
 
 export default useFetch;

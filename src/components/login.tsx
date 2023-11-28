@@ -3,20 +3,34 @@ import * as Form from "@radix-ui/react-form";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { CheckIcon, EnterIcon } from "@radix-ui/react-icons";
 import axios from "axios";
-async function submitForm(data: { [k: string]: FormDataEntryValue }) {
+import { DISTANT_API } from "../assets/api_calls";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+type ExpectedResponse = {data:{user:object, token:{accessToken:string, refreshToken:string}}, isPending:boolean, err:object}
+async function submitForm(data: { [k: string]: FormDataEntryValue }):Promise<object> {
   const response = await axios
-    .post("http://localhost:3000/login", data)
+    .post(DISTANT_API + "auth", data)
     .catch((err) => console.log(err));
-  console.warn(response);
+  console.warn((response as unknown as ExpectedResponse).data);
   //@ts-ignore
   if (response.data.err) {
     throw Error("Wrong credentials!");
   } else {
+    localStorage.setItem("token", (response as unknown as ExpectedResponse).data.token.accessToken);
+    localStorage.setItem("refreshToken", (response as unknown as ExpectedResponse).data.token.refreshToken);
     //@ts-ignore
-    return response.data;
+    return response.data.user;
   }
 }
 function LoginComponent() {
+const [tries, setTries] = useState(0)
+  const go = useNavigate();
+  useEffect(() => {
+    if(localStorage.getItem("token")){
+      go("/")
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tries])
   return (
     <>
       <div className="tabContainer">
@@ -29,6 +43,7 @@ function LoginComponent() {
             submitForm(data)
               .then((res) => {
                 console.log(res);
+                setTries(tries+1)
               })
               /**
                * Map errors from your server response into a structure you'd like to work with.

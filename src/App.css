@@ -139,6 +139,8 @@
   gap: 5%;
   margin: 0.5% 0;
   background-color: black;
+  border-radius: 30px;
+  overflow: hidden;
 }
 
 .me {

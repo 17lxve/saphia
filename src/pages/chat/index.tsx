@@ -2,10 +2,12 @@ import Sidebar from "../../components/sidebar";
 import history from "../../assets/dummy_hist.json";
 import ChatElement from "../../components/chatelement";
 import ChatBar from "../../components/chatbar";
+import { useRedirect } from "../../hooks";
 type Props = {
   tabs: { name: string; icon: JSX.Element; id: number; route: string }[];
 };
 function ChatPage({ tabs }: Props) {
+  useRedirect()
   return (
     <>
       <Sidebar tabs={tabs} />
