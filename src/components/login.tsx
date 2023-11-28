@@ -3,12 +3,13 @@ import * as Form from "@radix-ui/react-form";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { CheckIcon, EnterIcon } from "@radix-ui/react-icons";
 import axios from "axios";
+import { DISTANT_API } from "../assets/api_calls";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 type ExpectedResponse = {data:{user:object, token:{accessToken:string, refreshToken:string}}, isPending:boolean, err:object}
 async function submitForm(data: { [k: string]: FormDataEntryValue }):Promise<object> {
   const response = await axios
-    .post("http://localhost:3000/auth", data)
+    .post(DISTANT_API + "auth", data)
     .catch((err) => console.log(err));
   console.warn((response as unknown as ExpectedResponse).data);
   //@ts-ignore

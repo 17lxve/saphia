@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/sidebar";
 import { useFetch, useRedirect } from "../../hooks";
 import "./custom.css";
+import { DISTANT_API } from "../../assets/api_calls";
 
 type Props = {
   tabs: { name: string; icon: JSX.Element; id: number; route: string }[];
@@ -26,7 +27,7 @@ const clear = () => {
   };
   useRedirect()
   // const capitalize = (text:string) => text.charAt(0) + text.slice(1).toLowerCase()
-  const info = useFetch("http://localhost:3000/user", {
+  const info = useFetch(DISTANT_API + "user", {
     body: { token },
     method: "POST",
     headers: {
