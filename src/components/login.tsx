@@ -6,12 +6,12 @@ import axios from "axios";
 import { DISTANT_API } from "../assets/api_calls";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-type ExpectedResponse = {data:{user:object, token:{accessToken:string, refreshToken:string}}, isPending:boolean, err:object}
+export type ExpectedResponse = {data:{user:object, token:{accessToken:string, refreshToken:string}}, isPending:boolean, err:object}
 async function submitForm(data: { [k: string]: FormDataEntryValue }):Promise<object> {
   const response = await axios
     .post(DISTANT_API + "auth", data)
     .catch((err) => console.log(err));
-  console.warn((response as unknown as ExpectedResponse).data);
+  // console.warn((response as unknown as ExpectedResponse).data);
   //@ts-ignore
   if (response.data.err) {
     throw Error("Wrong credentials!");
@@ -41,8 +41,8 @@ const [tries, setTries] = useState(0)
 
             // Submit form data and catch errors in the response
             submitForm(data)
-              .then((res) => {
-                console.log(res);
+              .then(() => {
+                // console.log(res);
                 setTries(tries+1)
               })
               /**

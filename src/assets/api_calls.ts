@@ -1,2 +1,2 @@
-export const LOCAL_API="http://localhost:3000/"
-export const DISTANT_API="http://dlsi-dev.francecentral.cloudapp.azure.com:2000/"
+export const LOCAL_API= process.env.REACT_APP_DISTANT_API
+export const DISTANT_API= process.env.REACT_APP_DISTANT_API

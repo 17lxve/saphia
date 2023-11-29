@@ -3,6 +3,7 @@ import Sidebar from "../../components/sidebar";
 import { useFetch, useRedirect } from "../../hooks";
 import "./custom.css";
 import { DISTANT_API } from "../../assets/api_calls";
+import React from "react";
 
 type Props = {
   tabs: { name: string; icon: JSX.Element; id: number; route: string }[];
@@ -36,7 +37,7 @@ const clear = () => {
     },
   });
   if (info.data !== null) {
-    console.log(info)
+    // console.log(info)
     return (
       <>
         <Sidebar tabs={tabs} />
@@ -47,12 +48,12 @@ const clear = () => {
               <div className="infoPanel">
                 {Object.keys(info.data).map((k) => {
                   if (dataCorr[k as keyof typeof dataCorr] != "") {
-                    console.log(k)
+                    // console.log(k)
                     return (
-                      <>
+                      <React.Fragment key={k}>
                         <h6>{dataCorr[k as keyof typeof dataCorr]!}</h6>
                         <p className={k}>{(info.data![k] as string).toLowerCase()}</p>
-                      </>
+                      </React.Fragment>
                     );
                   }
                 })}
@@ -65,8 +66,9 @@ const clear = () => {
   } else if(info.error) {
     console.log(info)
     clear()
-  } else {
+  } else if(!info.isPending){
     alert("Unexpected error: This error was not encountered during pre-testing. Please report it.")
+    console.warn(info)
   }
 }
 export default UserPage;

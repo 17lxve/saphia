@@ -8,6 +8,7 @@
   text-align: center;
   border-radius: 20px;
   width: 50%;
+  color: var(--textSecondary)
 }
 .active-btn {
   background-color: var(--activeLinkColor);

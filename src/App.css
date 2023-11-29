@@ -160,7 +160,7 @@
 .me .pp {
   background-image: url("/favicon.ico");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 }
 .bot .pp {
