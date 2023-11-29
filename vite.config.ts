@@ -10,6 +10,6 @@ export default defineConfig(({mode}) => {
       'process.env.REACT_APP_LOCAL_API': JSON.stringify(env.REACT_APP_LOCAL_API),
     },
     plugins: [react()],
-    base: "./"
+    // base: "./"
   }
 })

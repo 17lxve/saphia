@@ -16,7 +16,7 @@ function Sidebar({ tabs }: Props) {
         <div className="sidebar-container">
           <h1 className="sidebar-element logo">
             {" "}
-            Chatbot <img src="images/gs2e1.png" alt="GS2E" />{" "}
+            Chatbot <img src="/images/gs2e1.png" alt="GS2E" />{" "}
           </h1>
           <div style={{ width: "80%" }}>
             {tabs.map((tab) => (
