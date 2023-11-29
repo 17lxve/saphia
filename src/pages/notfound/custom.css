@@ -1,0 +1,41 @@
+.notfound{
+    background-color: transparent;
+    display: grid;
+    width: 100%;
+    height: 100dvh;
+    place-items: center;
+    grid-template-rows: auto 7dvh 7dvh 7dvh auto;
+}
+.notfound h1, h3, button {
+    color: white;
+}
+
+.notfound h1{
+    font-size: 4ch;
+}
+.notfound h3{
+    font-size: 2ch;
+}
+.notfound .btn404{
+    font-size: 2ch;
+    background-color: var(--compColor);
+    color: var(--idleLink);
+    padding: 1% 2%;
+    outline: var(--idleLink) solid 4px ;
+    border-radius: 20px;
+    transition: all ease-in-out .2s;
+    text-decoration: none;
+}
+
+.notfound .btn404:hover{
+    color: var(--activeLinkColor);
+    background-color: var(--activeLinkBg);
+    cursor: pointer;
+}
+
+.notfound .btn404:active{
+    color: var(--compColor);
+    background-color: black;
+    outline: white solid 4px;
+    cursor: not-allowed;
+}
