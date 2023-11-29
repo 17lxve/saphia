@@ -8,8 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview --open",
-    "format": "prettier --write src/",
-    "deploy": "firebase --only hosting "
+    "format": "prettier --write src/"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.0.4",
