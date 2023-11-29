@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "tsc && vite build && vite preview --open",
     "format": "prettier --write src/",
-    "push": "git add * && git commit -m ignore && git push -u origin main"
+    "push": "git add * && git commit -m env && git push -u origin main"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.0.4",

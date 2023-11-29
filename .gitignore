@@ -25,3 +25,4 @@ dist-ssr
 # .env
 # CI/CD
 push.py
+.gitignore
