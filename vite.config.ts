@@ -9,6 +9,7 @@ export default defineConfig(({mode}) => {
       'process.env.REACT_APP_DISTANT_API': JSON.stringify(env.REACT_APP_DISTANT_API),
       'process.env.REACT_APP_LOCAL_API': JSON.stringify(env.REACT_APP_LOCAL_API),
     },
-    plugins: [react()]
+    plugins: [react()],
+    base: "/bot"
   }
 })
