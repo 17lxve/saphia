@@ -22,7 +22,7 @@ function App() {
       route: "/chat",
     },
     {
-      name: "Historique Conversations",
+      name: "Profil",
       icon: SVGs.Union,
       id: 3,
       route: "/profile",
